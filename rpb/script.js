@@ -6,7 +6,7 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
-const button1 = document.querySelector('#button1');
+const button1 = document.querySelector("#button1");
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
 const text = document.querySelector("#text");
@@ -17,10 +17,10 @@ const monsterStats = document.querySelector("#monsterStats");
 const monsterName = document.querySelector("#monsterName");
 const monsterHealthText = document.querySelector("#monsterHealth");
 const weapons = [
-    { name: 'stick', power: 5 },
-    { name: 'dagger', power: 30 },
-    { name: 'claw hammer', power: 50 },
-    { name: 'sword', power: 100 }
+    { name: "stick", power: 5 },
+    { name: "dagger", power: 30 },
+    { name: "claw hammer", power: 50 },
+    { name: "sword", power: 100 }
 ];
 const monsters = [
     {
@@ -38,13 +38,13 @@ const monsters = [
         level: 20,
         health: 300
     }
-]
+];
 const locations = [
     {
         name: "town square",
         "button text": ["Go to store", "Go to cave", "Fight dragon"],
         "button functions": [goStore, goCave, fightDragon],
-        text: "You are in the town square. You see a sign that says \"Store\"."
+        text: 'You are in the town square. You see a sign that says "Store".'
     },
     {
         name: "store",
@@ -204,20 +204,20 @@ function attack() {
             defeatMonster();
         }
     }
-    if (Math.random() <= .1 && inventory.length !== 1) {
+    if (Math.random() <= 0.1 && inventory.length !== 1) {
         text.innerText += " Your " + inventory.pop() + " breaks.";
         currentWeapon--;
     }
 }
 
 function getMonsterAttackValue(level) {
-    const hit = (level * 5) - (Math.floor(Math.random() * xp));
+    const hit = level * 5 - Math.floor(Math.random() * xp);
     console.log(hit);
     return hit > 0 ? hit : 0;
 }
 
 function isMonsterHit() {
-    return Math.random() > .2 || health < 20;
+    return Math.random() > 0.2 || health < 20;
 }
 
 function dodge() {
