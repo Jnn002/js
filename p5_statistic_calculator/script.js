@@ -48,12 +48,15 @@ const calculate = () => {
     const array = value.split(/,\s*/g);
     const numbers = array.map(el => Number(el)).filter(el => !isNaN(el));
 
-    const mean = getMean(numbers);
-    const median = getMedian(numbers);
-    const mode = getMode(numbers);
-    const range = getRange(numbers);
-    const variance = getVariance(numbers);
-    const standardDeviation = getStandardDeviation(numbers);
+    // Puedes ajustar el número en toFixed() según la cantidad de decimales que desees
+    const decimals = 2; // Por ejemplo, 2 decimales
+
+    const mean = getMean(numbers).toFixed(decimals);
+    const median = getMedian(numbers).toFixed(decimals);
+    const mode = getMode(numbers); // El mode no necesita toFixed porque es texto
+    const range = getRange(numbers).toFixed(decimals);
+    const variance = getVariance(numbers).toFixed(decimals);
+    const standardDeviation = getStandardDeviation(numbers).toFixed(decimals);
 
     document.querySelector("#mean").textContent = mean;
     document.querySelector("#median").textContent = median;
