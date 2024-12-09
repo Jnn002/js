@@ -1,24 +1,99 @@
-/*
-Usage
-Use the endpoint https://pokeapi-proxy.freecodecamp.rocks/api/pokemon to see a list of all valid Pokémon names, id numbers, and URLs.
+const pokeApi = `https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/`;
 
-Use the endpoint https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/{name-or-id} to get data for a Pokémon, where {name-or-id} is the Pokémon's name or id number.
+// DOM elements
+const searchInput = document.getElementById("search-input");
+const searchButton = document.getElementById("search-button");
+const searchRandom = document.getElementById("search-random");
+const searchForm = document.getElementById("search-form");
 
-Note: Pokémon names should be in lowercase, have special characters removed, and be dash separated. Also, if the Pokémon has either ♀ or ♂ as part of its name, the format is {name-f} or {name-m}, respectively.
+// Pokémon info
+const pokemonName = document.getElementById("pokemon-name");
+const pokemonID = document.getElementById("pokemon-id");
+const spriteContainer = document.getElementById("sprite-container");
+const types = document.getElementById("types");
+const height = document.getElementById("height");
+const weight = document.getElementById("weight");
 
-Example Requests
-Click any of the example requests below to see its response.
+// pokemon stats
+const pokeHp = document.getElementById("hp");
+const pokeAttack = document.getElementById("attack");
+const pokeDefense = document.getElementById("defense");
+const pokeSpAttack = document.getElementById("special-attack");
+const pokeSpDefense = document.getElementById("special-defense");
+const pokeSpeed = document.getElementById("speed");
 
-All valid Pokémon:
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon
-Pikachu:
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/pikachu
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/25
-Nidoran♀:
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/nidoran-f
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/29
-Mr. Mime:
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/mr-mime
-https://pokeapi-proxy.freecodecamp.rocks/api/pokemon/122
+const getPokemon = async () => {
+    try {
+        const pokemonIdName = searchInput.value.toLowerCase();
+        const res = await fetch(`${pokeApi}${pokemonIdName}`);
+        const data = await res.json();
+        console.log(data);
 
-*/
+        // Set Pokémon info
+        pokemonName.textContent = `${data.name}`;
+        pokemonID.textContent = `#${data.id}`;
+        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" alt="Pokémon Sprite">`;
+        types.innerHTML = data.types.map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join("");
+        pokeHp.textContent = `${data.stats[0].base_stat}`;
+        pokeAttack.textContent = `${data.stats[1].base_stat}`;
+        pokeDefense.textContent = `${data.stats[2].base_stat}`;
+        pokeSpAttack.textContent = `${data.stats[3].base_stat}`;
+        pokeSpDefense.textContent = `${data.stats[4].base_stat}`;
+        pokeSpeed.textContent = `${data.stats[5].base_stat}`;
+    } catch (err) {
+        console.log(err);
+        alert("Pokémon not found");
+    }
+};
+
+const getRandomPokemon = async () => {
+    try {
+        const randomId = Math.floor(Math.random() * 898) + 1; // Pokémon IDs range from 1 to 898
+        const res = await fetch(`${pokeApi}${randomId}`);
+        const data = await res.json();
+        console.log(data);
+
+        // Set Pokémon info
+        pokemonName.textContent = `${data.name}`;
+        pokemonID.textContent = `#${data.id}`;
+        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" alt="Pokémon Sprite">`;
+        types.innerHTML = data.types.map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join("");
+        pokeHp.textContent = `${data.stats[0].base_stat}`;
+        pokeAttack.textContent = `${data.stats[1].base_stat}`;
+        pokeDefense.textContent = `${data.stats[2].base_stat}`;
+        pokeSpAttack.textContent = `${data.stats[3].base_stat}`;
+        pokeSpDefense.textContent = `${data.stats[4].base_stat}`;
+        pokeSpeed.textContent = `${data.stats[5].base_stat}`;
+    } catch (err) {
+        console.log(err);
+        alert("Pokémon not found");
+    }
+};
+
+const resetDisplay = () => {
+    const sprite = document.getElementById("sprite");
+    if (sprite) sprite.remove();
+
+    // reset stats
+    pokemonName.textContent = "";
+    pokemonID.textContent = "";
+    types.innerHTML = "";
+    height.textContent = "";
+    weight.textContent = "";
+    hp.textContent = "";
+    attack.textContent = "";
+    defense.textContent = "";
+    specialAttack.textContent = "";
+    specialDefense.textContent = "";
+    speed.textContent = "";
+};
+
+searchForm.addEventListener("submit", e => {
+    e.preventDefault();
+    getPokemon();
+});
+
+searchRandom.addEventListener("click", e => {
+    e.preventDefault();
+    getRandomPokemon();
+});
