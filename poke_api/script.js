@@ -48,7 +48,7 @@ const getPokemon = async () => {
 
 const getRandomPokemon = async () => {
     try {
-        const randomId = Math.floor(Math.random() * 898) + 1; // Pokémon IDs range from 1 to 898
+        const randomId = Math.floor(Math.random() * 898) + 1;
         const res = await fetch(`${pokeApi}${randomId}`);
         const data = await res.json();
         console.log(data);
