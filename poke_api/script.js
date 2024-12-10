@@ -24,22 +24,26 @@ const pokeSpeed = document.getElementById("speed");
 
 const getPokemon = async () => {
     try {
-        const pokemonIdName = searchInput.value.toLowerCase();
+        const pokemonIdName = searchInput.value.toLowerCase() || `/^#/${searchInput.value.toLowerCase()}`;
         const res = await fetch(`${pokeApi}${pokemonIdName}`);
         const data = await res.json();
         console.log(data);
 
         // Set Pokémon info
-        pokemonName.textContent = `${data.name}`;
+        pokemonName.textContent = `${data.name.toUpperCase()}`;
         pokemonID.textContent = `#${data.id}`;
-        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" alt="Pokémon Sprite">`;
-        types.innerHTML = data.types.map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join("");
+        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" id="sprite" alt="Pokémon Sprite">`;
+        types.innerHTML = data.types
+            .map(obj => `<span class="type ${obj.type.name}">${obj.type.name.toUpperCase()}</span>`)
+            .join("");
         pokeHp.textContent = `${data.stats[0].base_stat}`;
         pokeAttack.textContent = `${data.stats[1].base_stat}`;
         pokeDefense.textContent = `${data.stats[2].base_stat}`;
         pokeSpAttack.textContent = `${data.stats[3].base_stat}`;
         pokeSpDefense.textContent = `${data.stats[4].base_stat}`;
         pokeSpeed.textContent = `${data.stats[5].base_stat}`;
+        height.textContent = `HEIGHT: ${data.height}`;
+        weight.textContent = `WEIGHT: ${data.weight}`;
     } catch (err) {
         console.log(err);
         alert("Pokémon not found");
@@ -54,16 +58,20 @@ const getRandomPokemon = async () => {
         console.log(data);
 
         // Set Pokémon info
-        pokemonName.textContent = `${data.name}`;
+        pokemonName.textContent = `${data.name.toUpperCase()}`;
         pokemonID.textContent = `#${data.id}`;
-        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" alt="Pokémon Sprite">`;
-        types.innerHTML = data.types.map(obj => `<span class="type ${obj.type.name}">${obj.type.name}</span>`).join("");
+        spriteContainer.innerHTML = `<img src="${data.sprites.front_default}" id="sprite"alt="Pokémon Sprite">`;
+        types.innerHTML = data.types
+            .map(obj => `<span class="type ${obj.type.name}">${obj.type.name.toUpperCase()}</span>`)
+            .join("");
         pokeHp.textContent = `${data.stats[0].base_stat}`;
         pokeAttack.textContent = `${data.stats[1].base_stat}`;
         pokeDefense.textContent = `${data.stats[2].base_stat}`;
         pokeSpAttack.textContent = `${data.stats[3].base_stat}`;
         pokeSpDefense.textContent = `${data.stats[4].base_stat}`;
         pokeSpeed.textContent = `${data.stats[5].base_stat}`;
+        height.textContent = `HEIGHT: ${data.height}`;
+        weight.textContent = `WEIGHT: ${data.weight}`;
     } catch (err) {
         console.log(err);
         alert("Pokémon not found");

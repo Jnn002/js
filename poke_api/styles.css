@@ -5,6 +5,25 @@
     --white_3: #ddd;
     --white_back: #fff;
     --deep_black: #000000;
+
+    /* type colors */
+    --fire: #f08030;
+    --water: #6890f0;
+    --grass: #78c850;
+    --electric: #f8d030;
+    --ice: #98d8d8;
+    --fighting: #c03028;
+    --poison: #a040a0;
+    --ground: #e0c068;
+    --flying: #a890f0;
+    --psychic: #f85888;
+    --bug: #a8b820;
+    --rock: #b8a038;
+    --ghost: #705898;
+    --dark: #705848;
+    --dragon: #7038f8;
+    --steel: #b8b8d0;
+    --fairy: #ee99ac;
 }
 
 body {
@@ -146,9 +165,110 @@ td {
     background-color: var(--white_2);
 }
 
-.speed {
-    color: var(--red);
+/* types */
+.type {
+    padding: 5px;
+    border-radius: 5px;
+    margin: 2px;
+    color: #fff;
 }
+
+.fire {
+    background-color: var(--fire);
+    border: 1px dashed #c06020;
+}
+
+.water {
+    background-color: var(--water);
+    border: 1px dashed #4860a8;
+}
+
+.grass {
+    background-color: var(--grass);
+    border: 1px dashed #5c9440;
+}
+
+.electric {
+    background-color: var(--electric);
+    border: 1px dashed #c8a028;
+}
+
+.ice {
+    background-color: var(--ice);
+    border: 1px dashed #78b8b8;
+}
+
+.fighting {
+    background-color: var(--fighting);
+    border: 1px dashed #a02020;
+}
+
+.poison {
+    background-color: var(--poison);
+    border: 1px dashed #803080;
+}
+
+.ground {
+    background-color: var(--ground);
+    border: 1px dashed #c0a050;
+}
+
+.flying {
+    background-color: var(--flying);
+    border: 1px dashed #8878c0;
+}
+
+.psychic {
+    background-color: var(--psychic);
+    border: 1px dashed #c03060;
+}
+
+.bug {
+    background-color: var(--bug);
+    border: 1px dashed #889820;
+}
+
+.rock {
+    background-color: var(--rock);
+    border: 1px dashed #947828;
+}
+
+.ghost {
+    background-color: var(--ghost);
+    border: 1px dashed #504070;
+}
+
+.dark {
+    background-color: var(--dark);
+    border: 1px dashed #504038;
+}
+
+.dragon {
+    background-color: var(--dragon);
+    border: 1px dashed #5028c8;
+}
+
+.steel {
+    background-color: var(--steel);
+    border: 1px dashed #9090b0;
+}
+
+.fairy {
+    background-color: var(--fairy);
+    border: 1px dashed #cc798c;
+}
+
+.normal {
+    background-color: #a8a878;
+    border: 1px dashed #a8a878;
+}
+
+#sprite {
+    width: 200px;
+    height: 200px;
+}
+
+/* media queries */
 
 @media (min-width: 600px) {
     header form {
