@@ -58,12 +58,13 @@ h2 {
     height: 2rem;
     padding: 0 6px;
     border: none;
-    border-radius: 2px;
+    border-radius: 7px;
     cursor: pointer;
 }
 
 .number-input {
     font-size: inherit;
+    border-radius: 7px;
     padding: 0.3rem;
     width: 100%;
 }
@@ -83,27 +84,7 @@ h2 {
     margin-block-start: 20px;
     padding: 15px;
     border: 2px solid var(--orange);
-    border-radius: 2px;
-}
-
-#animation-container {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: end;
-    gap: 1rem;
-    margin-block-end: 1rem;
-    min-height: 40vh;
-    border: 2px dashed var(--orange);
-    padding: 1rem;
-}
-
-.animation-frame {
-    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell,
-        Ubuntu, roboto, noto, arial, sans-serif;
-    padding: 15px 10px;
-    border: 5px solid var(--orange);
-    font-size: 1.2rem;
-    text-align: center;
+    border-radius: 7px;
 }
 
 @media screen and (min-width: 36em) {
