@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: "class",
     content: ["./src/**/*.{html,js}"],
     theme: {
         extend: {
@@ -29,6 +30,11 @@ module.exports = {
                 /* Add custom spacing (Width and Height included)*/ 72: "18rem",
                 84: "21rem",
                 96: "24rem"
+            },
+            screens: {
+                mobile: "800px",
+                pc: "1024px",
+                ultrawide: "2560px"
             }
         }
     },

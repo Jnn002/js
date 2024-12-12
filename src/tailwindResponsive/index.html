@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="" UTF-8 />
+        <meta name="viewport" content="" width="device-width," initial-scale="1.0" />
+        <link rel="stylesheet" href="/src/output.css" />
+        <script>
+            // Mantener la preferencia de tema
+            if (localStorage.getItem("theme") === "dark") {
+                document.documentElement.classList.add("dark");
+            } else {
+                document.documentElement.classList.remove("dark");
+            }
+        </script>
+        <title>Responsive Tailwind</title>
+    </head>
+    <body class="sm:bg-amber-200 md:bg-purple-200 lg:bg-green-200 dark:bg-gray-900">
+        <div class="bg-black flex border-black border-2 h-20 md:place-content-between lg:place-content-around">
+            <div class="w-20 bg-red-500 place-content-center grid text-white">1</div>
+            <div class="w-20 bg-blue-500 place-content-center grid text-white">2</div>
+            <div class="w-20 bg-green-500 place-content-center grid text-white basis-1/3 lg:basis-3/5">3</div>
+            <div class="w-20 bg-yellow-500 place-content-center grid text-white">
+                <button type="button" class="px-2 bg-purple-600 mx-2 rounded-full" id="dark-light">Dark Mode</button>
+            </div>
+        </div>
+        <section class="grid md:grid-cols-2 md:gap-4 lg:grid-cols-3">
+            <div
+                class="border-2 border-black p-6 w-80 mx-auto mt-10 bg-white md:w-3/4 lg:w-4/5 dark:bg-gray-700 dark:text-white"
+            >
+                <h2 class="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">GitHub Education</h2>
+                <p class="mt-4 sm:text-xl mobile:font-thin md:text-2xl lg:text-3xl"
+                    >GitHub Education gives you the tools and community support to take on tech challenges and turn them
+                    into opportunities. Your future in tech starts here!
+                </p>
+            </div>
+            <div
+                class="border-2 border-black p-6 w-80 mx-auto mt-10 bg-white md:w-3/4 lg:w-4/5 dark:bg-gray-700 dark:text-white"
+            >
+                <h2 class="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">GitHub Education</h2>
+                <p class="mt-4 sm:text-xl mobile:font-thin md:text-2xl lg:text-3xl"
+                    >GitHub Education gives you the tools and community support to take on tech challenges and turn them
+                    into opportunities. Your future in tech starts here!
+                </p>
+            </div>
+            <div
+                class="border-2 border-black p-6 w-80 mx-auto mt-10 bg-white md:w-4/5 lg:w-4/5 md:col-span-2 lg:col-span-1 dark:bg-gray-700 dark:text-white"
+            >
+                <h2 class="text-xl font-bold sm:text-2xl md:text-3xl lg:text-4xl">GitHub Education</h2>
+                <p class="mt-4 sm:text-xl mobile:font-thin md:text-2xl lg:text-3xl"
+                    >GitHub Education gives you the tools and community support to take on tech challenges and turn them
+                    into opportunities. Your future in tech starts here!
+                </p>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
