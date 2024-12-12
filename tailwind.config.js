@@ -24,6 +24,11 @@ module.exports = {
                     fairy: "#ee99ac",
                     normal: "#a8a878"
                 }
+            },
+            spacing: {
+                /* Add custom spacing (Width and Height included)*/ 72: "18rem",
+                84: "21rem",
+                96: "24rem"
             }
         }
     },
