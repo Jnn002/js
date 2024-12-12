@@ -1,3 +1,69 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .type {
+        @apply px-1.5 rounded m-0.5 text-white;
+    }
+    .type.fire {
+        @apply bg-pokemon-fire border border-dashed border-[#c06020];
+    }
+    .type.water {
+        @apply bg-pokemon-water border border-dashed border-[#4860a8];
+    }
+    .type.grass {
+        @apply bg-pokemon-grass border border-dashed border-[#5c9440];
+    }
+    .type.electric {
+        @apply bg-pokemon-electric border border-dashed border-[#f8d030];
+    }
+    .type.ice {
+        @apply bg-pokemon-ice border border-dashed border-[#70c0e0];
+    }
+    .type.fighting {
+        @apply bg-pokemon-fighting border border-dashed border-[#a05038];
+    }
+    .type.poison {
+        @apply bg-pokemon-poison border border-dashed border-[#a040a0];
+    }
+    .type.ground {
+        @apply bg-pokemon-ground border border-dashed border-[#e0c068];
+    }
+    .type.flying {
+        @apply bg-pokemon-flying border border-dashed border-[#a890f0];
+    }
+    .type.psychic {
+        @apply bg-pokemon-psychic border border-dashed border-[#f85888];
+    }
+    .type.bug {
+        @apply bg-pokemon-bug border border-dashed border-[#a8b820];
+    }
+    .type.rock {
+        @apply bg-pokemon-rock border border-dashed border-[#b8a038];
+    }
+    .type.ghost {
+        @apply bg-pokemon-ghost border border-dashed border-[#705898];
+    }
+    .type.dragon {
+        @apply bg-pokemon-dragon border border-dashed border-[#7038f8];
+    }
+    .type.dark {
+        @apply bg-pokemon-dark border border-dashed border-[#705848];
+    }
+    .type.steel {
+        @apply bg-pokemon-steel border border-dashed border-[#b8b8d0];
+    }
+    .type.fairy {
+        @apply bg-pokemon-fairy border border-dashed border-[#ee99ac];
+    }
+    .type.normal {
+        @apply bg-pokemon-normal border border-dashed border-[#a8a878];
+    }
+
+    /* Add other type classes following the same pattern */
+}
+
+#sprite {
+    @apply w-[200px] h-[200px];
+}

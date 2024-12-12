@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Poke API</title>
+        <link href="/src/output.css" rel="stylesheet" />
+    </head>
+    <body class="font-sans bg-white text-black m-0 p-0">
+        <header class="bg-[#d30606] text-white p-5 text-center flex items-center justify-between flex-wrap">
+            <h1 class="m-0 text-2xl">PokéAPI</h1>
+            <form role="search" id="search-form" class="flex flex-col md:flex-row justify-center items-center mt-2.5">
+                <label for="search-input" class="mr-2.5 text-lg">Search Pokémon:</label>
+                <input
+                    type="text"
+                    name="pokemon"
+                    id="search-input"
+                    placeholder="Search Pokémon name or ID"
+                    required
+                    class="p-2.5 border-2 border-black rounded mb-2.5 md:mb-0 md:mr-2.5 w-full md:w-[300px] text-black"
+                />
+                <button
+                    id="search-button"
+                    class="bg-black text-white px-5 py-2.5 m-0.5 rounded cursor-pointer text-base hover:bg-[#3a3a3a] hover:scale-105 transition-transform duration-200"
+                >
+                    Search
+                </button>
+                <button
+                    id="search-random"
+                    class="bg-black text-white px-5 py-2.5 m-0.5 rounded cursor-pointer text-base hover:bg-[#3a3a3a] hover:scale-105 transition-transform duration-200"
+                >
+                    Random
+                </button>
+            </form>
+        </header>
+        <main>
+            <div
+                class="max-w-[800px] mx-auto my-5 p-5 bg-white rounded-lg shadow-md w-[90%] md:w-[80%] lg:w-[70%] xl:w-[60%]"
+            >
+                <div class="flex flex-col items-center">
+                    <div class="w-full mb-5">
+                        <div class="flex justify-around mb-2.5">
+                            <span id="pokemon-name" class="font-bold text-xl"></span>
+                            <span id="pokemon-id" class="text-gray-600"></span>
+                        </div>
+                        <div class="flex justify-around mb-2.5">
+                            <span id="weight" class="text-gray-700"></span>
+                            <span id="height" class="text-gray-700"></span>
+                        </div>
+                        <div id="sprite-container" class="flex justify-center mb-2.5"></div>
+                        <div id="types" class="flex justify-center gap-2 mb-2.5"></div>
+                    </div>
+                    <div class="w-full">
+                        <table class="w-full border-collapse rounded-lg">
+                            <tr>
+                                <th class="p-2.5 text-left bg-black text-white">Base</th>
+                                <th class="p-2.5 text-center bg-black text-white">Stats</th>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">HP:</td>
+                                <td id="hp" class="p-2.5 text-center border-b border-gray-300 bg-gray-50"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">Attack:</td>
+                                <td id="attack" class="p-2.5 text-center border-b border-gray-300 bg-gray-50"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">Defense:</td>
+                                <td id="defense" class="p-2.5 text-center border-b border-gray-300 bg-gray-50"></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">Special Attack:</td>
+                                <td
+                                    id="special-attack"
+                                    class="p-2.5 text-center border-b border-gray-300 bg-gray-50"
+                                ></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">Special Defense:</td>
+                                <td
+                                    id="special-defense"
+                                    class="p-2.5 text-center border-b border-gray-300 bg-gray-50"
+                                ></td>
+                            </tr>
+                            <tr>
+                                <td class="p-2.5 text-left border-b border-gray-300 bg-gray-50">Speed:</td>
+                                <td id="speed" class="p-2.5 text-center border-b border-gray-300 bg-gray-50"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="./script.js"></script>
+    </body>
+</html>
