@@ -26,7 +26,7 @@ export const OverviewCard = ({ user, audienceType, audience, network, isUp, toda
             <div className={`${networkColor[network]} h-1 mb-2`}></div>
             <div className="flex items-center place-content-center gap-2 p-3">
                 <img src={networkLogo[network]} alt={`${network} logo`}></img>
-                <p className="text-xs text-dark-grayish-blue font-bold">{user}</p>
+                <p className="text-xs text-dark-grayish-blue font-bold">{user}</p>  
             </div>
             <p className="text-[56px] font-semibold text-very-dark-blue dark:text-white">{audience}</p>
             <p className="uppercase tracking-[5px] text-very-dark-blue text-s dark:text-desaturated-blue">
