@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .card-custom {
+        @apply bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105;
+    }
+
+    .card-size {
+        @apply relative h-48 overflow-hidden;
+    }
+
+    .card-overlay {
+        @apply absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 hover:opacity-100 duration-300;
+    }
+
+    .container-padding {
+        @apply p-6;
+    }
+
+    .card-title {
+        @apply text-2xl text-white font-bold mb-6;
+    }
+
+    .card-subtitle {
+        @apply text-gray-300 text-lg mb-3;
+    }
+
+    .card-description {
+        @apply text-gray-400 text-sm font-light;
+    }
+
+    /* Custom classes */
+    .page-container {
+        @apply min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8;
+    }
+
+    .grid-container {
+        @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4;
+    }
+}
