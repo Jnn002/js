@@ -54,6 +54,9 @@
 }
 
 /* General styles */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     background: var(--clr-light);
@@ -521,4 +524,31 @@ header {
     background-color: white;
     border-radius: 60%;
     margin: 0 0.5rem 1.5rem;
+}
+
+/* Individual portfolio item styles */
+
+.portfolio-item-individual {
+    padding: 0 2em 2em;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.portfolio-item-individual img {
+    max-width: 600px;
+    max-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem 0;
+}
+
+.portfolio-item-individual p {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Custom intro for the portfolio item */
+.intro--project {
+    padding-bottom: 1rem;
 }
